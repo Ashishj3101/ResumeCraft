@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ResumeCraft AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Create Your Professional Resume</h1>
+                <p>Use the power of AI to build a resume that stands out.</p>
+                <button type="button" id="startBuilding" class="btn hero-btn">Start Building</button>
+            </div>
+            <div class="hero-image">
+                <img src="resume-hero.png" alt="Resume Image" style="width: 350px;">
+            </div>
+        </div>
+
+        <main>
+            <section class="form-section" id="formSection">
+                <form id="resumeForm">
+                    <div class="form-header">
+                        <h2>Personal Information</h2>
+                        <div class="profile-image-upload">
+                            <label for="profileImage">
+                                <img src="icon.png" id="profileImagePreview" alt="Profile Image" />
+                            </label>
+                            <input type="file" id="profileImage" accept="image/*" />
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="input-group">
+                        <label for="linkedin">LinkedIn Profile (Optional)</label>
+                        <input type="text" id="linkedin" placeholder="Enter your LinkedIn profile URL">
+                    </div>
+                    <div class="input-group">
+                        <label for="github">GitHub Profile (Optional)</label>
+                        <input type="text" id="github" placeholder="Enter your GitHub profile URL">
+                    </div>
+        
+                    <h2>Summary</h2>
+                    <div class="input-group">
+                        <label for="summary">Summary</label>
+                        <textarea id="summary" placeholder="Write a brief summary or click 'Generate'"></textarea>
+                    </div>
+                    <button type="button" id="generateSummary" class="btn primary-btn">Generate Summary</button>
+        
+                    <h2>Work Experience</h2>
+                    <div id="experiences"></div>
+                    <button type="button" id="addExperience" class="btn secondary-btn">Add Experience</button>
+        
+                    <h2>Education</h2>
+                    <div id="educations"></div>
+                    <button type="button" id="addEducation" class="btn secondary-btn">Add Education</button>
+        
+                    <h2>Skills</h2>
+                    <div class="input-group">
+                        <label for="skills">Skills</label>
+                        <input type="text" id="skills" placeholder="Enter skills separated by commas">
+                    </div>
+        
+                    <button type="button" id="generateResume" class="btn primary-btn">Generate Resume</button>
+                </form>
+            </section>
+            
+            <section class="preview-section" id="previewSection">
+                <h2>Resume Preview</h2>
+                <div id="resumePreview">
+                    <div id="previewContent"></div>
+                </div>
+                <button type="button" id="downloadPdf" class="btn primary-btn" disabled>Download PDF</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
